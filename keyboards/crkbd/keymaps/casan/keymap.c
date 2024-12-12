@@ -31,14 +31,17 @@ enum my_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_QUOT,
+       KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_LBRC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
    /*MT(MOD_LCTL, KC_CAPS),    KC_A,    KC_S,    KC_D,    KC_F, KC_G,                 KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, MT(MOD_RCTL, KC_QUOT),*/
-      KC_CAPS,    KC_A,    KC_S,    KC_D,    MT(MOD_LCTL, KC_F),    KC_G,           KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,  KC_ENT,
+      KC_CAPS,    KC_A,    KC_S, MT(MOD_LALT, KC_D), MT(MOD_LCTL, KC_F), KC_G,  KC_H, MT(MOD_LCTL, KC_J), MT(MOD_LALT, KC_K),    KC_L, KC_SCLN,  KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT,
+      /*KC_LSFT, MT(MOD_LCTL, KC_Z), MT(MOD_LALT, KC_X), KC_C, KC_V, KC_B,            KC_N,    KC_M, KC_COMM,  MT(MOD_LALT, KC_DOT), MT(MOD_LCTL, KC_SLSH),  KC_RSFT,*/
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LALT,  KC_SPC, MO(1),        MO(2), KC_BSPC, KC_LCTL
+                                          KC_BSPC,  KC_SPC, MO(1),        MO(2), KC_TAB, KC_ENT
+                                          /* KC_ENT,  KC_SPC, MO(1),        MO(2), KC_BSPC, KC_TAB */
+                                          /* KC_TAB,  KC_SPC, MO(1),        MO(2), KC_BSPC, KC_ENT */
                                         /*KC_LALT, KC_SPC, LM(1, MOD_LALT),     MO(2), KC_BSPC, MO(3)*/
                                       //`--------------------------'  `--------------------------'
 
@@ -65,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, C(KC_X), C(KC_C), C(KC_V), XXXXXXX,                         KC_O,    KC_M,    KC_F, XXXXXXX, XXXXXXX, KC_LSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______,  _______,    MO(3),  _______,   _______
+                                          _______, _______,  _______,    MO(3),  _______,   A(KC_ENT)
                                       //`--------------------------'  `--------------------------'
   ),
 
